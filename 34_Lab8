@@ -1,0 +1,139 @@
+Program:	packageenheritence; importjava.util.Scanner;
+classPerson{
+Scanner in = new
+Scanner(System.in);Stringname;
+String address;int age;Person()
+{
+name = "";address = "";age =0;
+}
+voiddisplay()
+{
+System.out.println("Name:"+name); System.out.println("Age:"+age);
+ 
+
+	System.out.println("Address:"+address);
+}
+voidgetDetails()
+{
+System.out.println("Enter name : ");name = in.nextLine();System.out.println("Enter address : ");address = in.nextLine();System.out.println("Enter age:");age =in.nextInt();
+}
+}
+class Employee extends Person{int empID; double salary;Employee()
+{
+empID= 0; salary=0.0;
+}
+voidgetDetails()
+{
+super.getDetails();System.out.println("Ente r Employee ID : ");empID = in.nextInt();System.out.println("Enter base salary : ");salary= in.nextDouble();
+}
+voiddisplay()
+{
+super.display();System.out.println("Employe eID:"+empID); System.out.println("BaseSalary:Rs."+salary);
+}
+}
+publicclassProgrammerextendsEmployee
+{
+double hike; String skills;Programmer()
+{
+hike = 0;skills="";
+}
+voidgetDetails()
+{
+super.getDetails();System.out.println("Ente r salary hike : ");hike= in.nextDouble(); System.out.println("Enter technical skills : ");in.nextLine();
+skills=in.nextLine();
+
+}
+voiddisplay()
+{
+super.display();
+ 
+
+		System.out.println("SalaryHike:Rs."+hike);
+		System.out.println("Totalsalary:Rs."+(salary+hike));
+		System.out.println("Technicalskills:"+skills);
+	}	
+	publicstaticvoidmain(Stringargs[])
+	{	
+		System.out.println("Enterdetailsfor1stprogrammer");
+		Programmerobj1=newProgrammer();
+		obj1.getDetails();
+		System.out.println("Enterdetailsfor2ndprogrammer");
+		Programmerobj2=newProgrammer();
+		obj2.getDetails();
+		;
+		System.out.println("Enterdetailsfor3rdprogrammer");
+		Programmerobj3=newProgrammer();
+		obj3.getDetails();
+		System.out.println("\nDetailsof1stprogrammer");
+		obj1.display();
+		System.out.println("\nDetailsof2ndprogrammer");
+		obj2.display();
+		System.out.println("\nDetailsof3rdprogrammer");
+		obj3.display();
+	}	
+	}	
+
+
+
+
+
+
+
+
+
+
+
+
+
+Program:	importjava.util.Scanner;
+
+class employee1
+{int EmpID;floatsa lary; voidsetdetails()
+{
+Scanner t= new Scanner(System.in);System.out.println("Ent er your ID =");EmpID= t.nextInt();System.out.println("Enter your Salary =");salary= t.nextFloat();
+}
+}
+
+classPermanentEmpextendsemployee1{ doublehike=0.5; voidgeneratesalary()
+{
+System.out.println("SalaryofpermanentemployeeisRs."
++(salary+(salary*hike)));
+}
+}
+
+classTemperoryEmpextendsemployee1{ doublehike=0.2; voidgeneratesalary()
+{
+System.out.println("SalaryoftemporaryemployeeisRs."
++(salary+(salary*hike)));
+}
+}
+
+publicclassemployee
+{
+ 
+
+	publicstaticvoidmain(Stringargs[])
+	{
+	Scannerin=newScanner(System.in);
+	System.out.println("Enter1forPermanentEmployeeand2for
+	TemporaryEmployee");
+	intchoice=in.nextInt();
+	switch(choice)
+	{
+	case1:
+	PermanentEmpp=newPermanentEmp();
+	p.setdetails();
+	p.generatesalary();
+	break;
+	case2:
+	TemperoryEmpt=newTemperoryEmp();
+	t.setdetails();
+	t.generatesalary();
+	break;
+	default:
+	System.out.println("Invalidchoice");
+	}
+	
+
+}
+	}
